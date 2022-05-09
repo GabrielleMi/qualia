@@ -56,17 +56,17 @@ public class Switch : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == PersoMainTag.persoTag) _checkInteraction = true;
+        if (other.CompareTag(PersoMainTag.persoTag)) _checkInteraction = true;
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == PersoMainTag.persoTag) _checkInteraction = false;
+        if (other.CompareTag(PersoMainTag.persoTag)) _checkInteraction = false;
     }
 
     void ChangeButtons()
     {
-        bool canPressMaterial = _canPress? _canPressMaterial : _cannotPressMaterial;
+        bool canPressMaterial = _canPress ? _canPressMaterial : _cannotPressMaterial;
 
         foreach (MeshRenderer button in _buttons)
         {

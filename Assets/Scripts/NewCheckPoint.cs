@@ -6,7 +6,7 @@ public class NewCheckPoint : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == PersoMainTag.persoTag)
+        if (other.CompareTag(PersoMainTag.persoTag))
         {
             other.gameObject.GetComponent<PersoMain>().CheckPoint = transform;
         }

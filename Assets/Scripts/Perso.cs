@@ -79,7 +79,7 @@ public class Perso : MonoBehaviour
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Magnet")
+        if (other.CompareTag("Magnet"))
         {
             if (other.gameObject.GetComponent<Magnet>().IsOn)
             {
@@ -91,7 +91,7 @@ public class Perso : MonoBehaviour
 
     protected virtual void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Magnet")
+        if (other.CompareTag("Magnet"))
         {
             ToggleMagneticInfluence();
         }
@@ -104,16 +104,8 @@ public class Perso : MonoBehaviour
 
     protected void ToggleMagneticInfluence()
     {
-        if (_isMagnetAttracted)
-        {
-            _isMagnetAttracted = false;
-            _rb.useGravity = true;
-        }
-        else if (!_isMagnetAttracted)
-        {
-            _rb.useGravity = false;
-            _isMagnetAttracted = true;
-        }
+        _rb.useGravity = _isMagnetAttracted;
+        _isMagnetAttracted = !_isMagnetAttracted;
 
         Attracted();
     }

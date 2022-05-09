@@ -12,7 +12,8 @@ public class Magnet : MonoBehaviour
            set { _isOn = value; } 
     }
 
-    void Start(){
+    void Start()
+    {
         _collider = GetComponent<CapsuleCollider>();
     }
 

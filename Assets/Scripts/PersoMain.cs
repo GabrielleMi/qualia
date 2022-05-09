@@ -214,7 +214,9 @@ public class PersoMain : Perso
     {
         base.OnTriggerEnter(other);
 
-        if ((other.gameObject.tag == PersoMainTag.persoTag || other.gameObject.tag == "Drone" ) && _isGrounded)
+        bool isPerso = collision.CompareTag(PersoMainTag.persoTag);
+
+        if ((isPerso || other.CompareTag("Drone")) && _isGrounded)
         {
             _toGrab = other.gameObject;
         }
@@ -224,7 +226,9 @@ public class PersoMain : Perso
     {
         base.OnTriggerExit(other);
 
-        if (other.gameObject.tag == PersoMainTag.persoTag || other.gameObject.tag == "Drone")
+        bool isPerso = collision.CompareTag(PersoMainTag.persoTag);
+
+        if (isPerso || other.CompareTag("Drone"))
         {
             _toGrab = null;
         }

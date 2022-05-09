@@ -25,12 +25,12 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "CharacterBody")
+        if (collision.CompareTag("CharacterBody"))
         {
             collision.gameObject.GetComponent<Perso>().Dmg();
         }
 
-        if (collision.gameObject.tag != "Drone")
+        if (!collision.CompareTag("Drone"))
         {
             Destroy(gameObject);
         }

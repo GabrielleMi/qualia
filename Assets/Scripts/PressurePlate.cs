@@ -32,7 +32,9 @@ public class PressurePlate : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == PersoMainTag.persoTag || collision.gameObject.tag == "Drone")
+        bool isPerso = collision.CompareTag(PersoMainTag.persoTag);
+
+        if (isPerso || collision.CompareTag("Drone"))
         {
             _currentWeight += collision.gameObject.GetComponent<Rigidbody>().mass;
 
@@ -43,7 +45,9 @@ public class PressurePlate : MonoBehaviour
 
     void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.tag == PersoMainTag.persoTag || collision.gameObject.tag == "Drone")
+        bool isPerso = collision.CompareTag(PersoMainTag.persoTag);
+
+        if (isPerso || collision.CompareTag("Drone"))
         {
             _currentWeight -= collision.gameObject.GetComponent<Rigidbody>().mass;
 
