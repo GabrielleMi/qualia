@@ -17,7 +17,7 @@ public class MagnetRotate : MonoBehaviour
         float angleX;
         float targetAngle = _perso.IsMagnetAttracted ? HALF_CIRCLE_ANGLE : 0;
 
-        while (transform.localRotation.x != targetAngel)
+        while (transform.localRotation.x != targetAngle)
         {
             transform.localRotation = Quaternion.RotateTowards(transform.localRotation, Quaternion.Euler(targetAngle, 0, 0), 3.0f);
             yield return null;

@@ -6,7 +6,7 @@ public class DeathZone : MonoBehaviour
 {
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == PersoMainTag.persoTag)
+        if (collision.gameObject.CompareTag(PersoMainTag.persoTag))
         {
             collision.gameObject.GetComponent<PersoMain>().Die();
         }

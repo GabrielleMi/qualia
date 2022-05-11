@@ -6,7 +6,7 @@ public class TutorialEnd : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(PersoMainTag.persoTag))
+        if (other.gameObject.CompareTag(PersoMainTag.persoTag))
         {
             ScenesManager.Instance.ChangeScene("Level1");
         }
