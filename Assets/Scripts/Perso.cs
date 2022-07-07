@@ -79,13 +79,9 @@ public class Perso : MonoBehaviour
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Magnet"))
+        if (other.gameObject.CompareTag("Magnet") && other.gameObject.GetComponent<Magnet>().IsOn)
         {
-            if (other.gameObject.GetComponent<Magnet>().IsOn)
-            {
-                ToggleMagneticInfluence();
-            }
-
+            ToggleMagneticInfluence();
         }
     }
 

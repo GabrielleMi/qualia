@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class DangerZone : Zone
 {
-    private void Start()
-    {
-    }
-
     public override Type GetZoneType()
     {
         return Type.Danger;

@@ -8,8 +8,8 @@ public class Magnet : MonoBehaviour
     private bool _isOn = true;
 
     public bool IsOn {
-           get { return _isOn; }
-           set { _isOn = value; } 
+        get { return _isOn; }
+        set { _isOn = value; } 
     }
 
     void Start()

@@ -53,7 +53,7 @@ public class Elevator : MonoBehaviour
 
     #region Public methods
 
-    public void LiftRequest()
+    public void RequestLift()
     {
         if (!_isMoving)
         {
